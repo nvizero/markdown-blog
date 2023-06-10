@@ -34,7 +34,6 @@ export async function getStaticPaths(){
     },
   }))
 
-  console.log(paths)
   return {
     paths,
     fallback:false,
@@ -46,7 +45,6 @@ export async function getStaticProps({params:{slug}}){
     path.join('posts',slug+'.md'),'utf-8'
   )
   const {data:frontmatter, content} = matter(markdownWithMeta)
-  console.log(slug)
   return {
     props:{
       frontmatter,
