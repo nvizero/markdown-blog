@@ -6,7 +6,12 @@ cover_image: '/images/posts/img1.jpg'
 ---
 
 #架設自有的Kubernetes 
-首先你要有三台主機
+先下載
+```
+git clone https://github.com/kubernetes-sigs/kubespray
+```
+需要三台主機
+
 用 VM 也可以 (記得開root權限 ...)
 
 他的原理是用ansible去做架設 所以你的電腦要先裝好Ansible
