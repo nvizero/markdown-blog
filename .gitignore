@@ -7,4 +7,4 @@ go.sum
 logs/
 .env
 .next/
-
+node_modules/
