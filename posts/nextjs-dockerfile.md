@@ -1,7 +1,7 @@
 ---
 title: 'nextjs Build Dockerfile'
-date: '2023-06-10'
-excerpt: 'k8s,kubernetes,config'
+date: '2023-06-11'
+excerpt: 'Nextjs,dockerfile,docker'
 cover_image: '/images/posts/img1.jpg'
 ---
 
