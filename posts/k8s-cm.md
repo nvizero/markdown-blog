@@ -6,6 +6,8 @@ cover_image: '/images/posts/img1.jpg'
 ---
 
 
+在kubernetes 中 設定ConfigMap 把以下內容 
+寫在xxx.yaml中 
 
 ```
 apiVersion: v1
@@ -21,6 +23,11 @@ data:
 
 ```
 
+kubectl apply -f xxx.yaml
+
+
+
+或是下指令
 ```
 kubectl create configmap maria-cm --from-literal=DATABASE=db --from-literal=USER=wp --from-literal=PASSWORD=123 --from-literal=ROOT_PASSWORD=123
 ```
