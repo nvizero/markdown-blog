@@ -11,8 +11,8 @@ export default function Home({posts}) {
         <title>Dev Next App</title>
       </Head>
       <div className="posts">
-        {posts.map((post , index)=>(
-          <Post key={index} post={post}/>
+        {posts.map((post , i)=>(
+          <Post post={post} key={i}  />
         ))}
       </div>
     </div>

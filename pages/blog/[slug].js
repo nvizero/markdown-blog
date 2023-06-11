@@ -11,6 +11,8 @@ export default function PostPage({
 }){
   return (
       <>
+        <title>{title}</title>
+        <meta name="description" content={content} />
         <Link href="/"><button className="btn btn-back">Go Back</button></Link>
         <div className="card card-page">
           <h1 className="post-title">{title}</h1>
