@@ -34,6 +34,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack -n monitoring
  echo "cHJvbS1vcGVyYXRvcg==" | base64 --decode
 ```
 
+帳/密: admin / prom-operator
 
 
 
