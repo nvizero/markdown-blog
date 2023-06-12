@@ -13,13 +13,16 @@ cover_image: '/images/posts/img5.jpg'
 
 
 # 極客時間 kubernetes 20 心得
-
+[不建議這麼做]
 kubernetes組件中 
 
 kind: Service
 Service 可以由 pod 的服務 導出pod 讓外部訪問 
 
 加上nginx + DNS + domain
-
+[用ingress 做比較適合]
 就可以用http://www.domain.com/來訪問你的服務
+
+## 極客時間 kubernetes 21 心得
+
 
