@@ -1,94 +1,48 @@
 ---
 title: 'k8s裝監控Grafana and '
-date: '2023-06-10'
+date: '2023-06-12'
 excerpt: 'k8s,kubernetes,config'
-cover_image: '/images/posts/img1.jpg'
+cover_image: '/images/posts/img3.jpg'
 ---
 
+# kubernetes 安裝監控 prometheus & grafana
 
-
-prometheus.yml
-
+## 先取得Repo
 ```
-apiVersion: apps/v1
-kind: DaemonSet
-metadata:
-  name: prometheus-node-exporter
-  namespace: monitoring
-  labels:
-    app: prometheus
-    component: node-exporter
-spec:
-  selector:
-    matchLabels:
-      app: prometheus
-      component: node-exporter
-  template:
-    metadata:
-      labels:
-        app: prometheus
-        component: node-exporter
-    spec:
-      containers:
-      - name: node-exporter
-        image: prom/node-exporter:v1.0.1
-        args:
-        - '--path.procfs=/host/proc'
-        - '--path.sysfs=/host/sys'
-        - '--path.rootfs=/host'
-        - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
-        ports:
-        - name: metrics
-          containerPort: 9100
-          protocol: TCP
-        volumeMounts:
-        - name: proc
-          mountPath: /host/proc
-          readOnly: true
-        - name: sys
-          mountPath: /host/sys
-          readOnly: true
-        - name: root
-          mountPath: /rootfs
-          readOnly: true
-      volumes:
-      - name: proc
-        hostPath:
-          path: /proc
-      - name: sys
-        hostPath:
-          path: /sys
-      - name: root
-        hostPath:
-          path: /
-      hostNetwork: true
-      hostPID: true
-
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
 ```
-因為 namespace 是 monitoring
-要先建立
 
+## 安裝 
 ```
-kubectl create namespace monitoring
+helm install prometheus prometheus-community/kube-prometheus-stack -n monitoring
 ```
-再
-kubectl apply Prometheus.yml
+
+### 等他跑完 這樣就裝好了 
+
+#### 我自己是用docker 的nginx反向代理出來 
 
 
 
-
-
-在kubernetes 安裝grafana  
-
-
+## 取得 key
 ```
-helm install grafana grafana/grafana --namespace grafana --set adminUser=myusername --set adminPassword=mypassword
+ kubectl get secret prometheus-grafana -oyaml -n monitoring
+```
 
-helm install grafana grafana/grafana --namespace grafana --set adminUser=admin --set adminPassword=admin
+## 解密 
+```
+ echo "cHJvbS1vcGVyYXRvcg==" | base64 --decode
 ```
 
 
 
 
-[YT教學 基本架設- has k8s](https://www.youtube.com/watch?v=NABZqKq1McE)
+
+-----
+
 [YT教學 基本架設- no k8s](https://www.youtube.com/watch?v=DIjF3Q7ch5U)
+
+-----
+
+[YT教學 k8s](https://www.youtube.com/watch?v=AAZD39-YKQk)
+[github helm code](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
