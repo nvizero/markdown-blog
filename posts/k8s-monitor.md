@@ -1,7 +1,7 @@
 ---
-title: 'k8s裝監控Grafana and '
+title: 'k8s裝監控Grafana and prometheus'
 date: '2023-06-12'
-excerpt: 'k8s,kubernetes,config'
+excerpt: 'k8s,kubernetes,helm'
 cover_image: '/images/posts/img3.jpg'
 ---
 
