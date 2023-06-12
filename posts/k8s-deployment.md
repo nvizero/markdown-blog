@@ -1,6 +1,6 @@
 ---
 title: 'k8s pod ,service,ingress 簡單架設'
-date: '2023-06-10'
+date: '2023-06-12'
 excerpt: 'k8s,kubernetes,ingress,service,pod'
 cover_image: '/images/posts/img4.jpg'
 ---
