@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: "markdown",
-    script: "yarn",
+    script: "npm",
     args: "start"
   }]
 }
