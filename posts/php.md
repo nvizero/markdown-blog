@@ -37,5 +37,6 @@ skywalking_agent.service_name = h1212ello-skywalking
 
 ### 裝的時候缺少什麼 問一下ChatGpt 
 
-
+## 參考
 [skywalking php agent](https://geshan.com.np/blog/2023/01/nextjs-docker/)
+[參考](https://blog.csdn.net/blueo666/article/details/128718826)
