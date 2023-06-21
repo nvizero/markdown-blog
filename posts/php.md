@@ -11,6 +11,14 @@ cover_image: '/images/posts/img1.jpg'
 再用 
 PHP 的PECL 裝skywalking 
 記得有分 skywalking 跟 skywlaking_agent 
+
+```
+pecl install skywalking
+
+pecl install skywalking_agent
+
+```
+
 在你的php.ini 加上 
 
 ```
