@@ -21,6 +21,7 @@ sudo bash openvpn-install.sh --auto
 在使用者端再下載openvpn client版本匯入檔案 
 完成
 
+##也可以下載 Pritunl 
 
 
 (參考教學)[https://www.youtube.com/watch?v=iIQuRr4Bncw]
