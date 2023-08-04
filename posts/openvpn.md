@@ -8,7 +8,7 @@ cover_image: '/images/posts/img4.jpg'
 ---
 
 
-
+https://get.vpnsetup.net/ovpn
 https://github.com/hwdsl2/openvpn-install/blob/master/openvpn-install.sh
 
 下載好後安裝
